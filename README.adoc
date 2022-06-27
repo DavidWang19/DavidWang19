@@ -1,0 +1,23 @@
+= Introduction
+
+Hi! This is DavidWang19, a retired OIer. Now I am an undergraduate majoring Natural Sciences (actually physics) at University of Cambridge.
+
+= Coding Status
+
+image::https://github-profile-trophy.vercel.app/?username=DavidWang19&&theme=tokyonight&&row=1&&count_private=true[trophy]
+
+image::https://github-readme-stats.vercel.app/api/top-langs/?username=DavidWang19&&count_private=true&&layout=compact&&show_icons=true&&theme=tokyonight&&card_width=445[lang_stats]
+
+image::https://github-readme-stats.vercel.app/api?username=DavidWang19&&count_private=true&&show_icons=true&&theme=tokyonight[stats]
+
+= Skills
+
+image:https://profilinator.rishav.dev/skills-assets/c-original.svg[C,100]
+image:https://profilinator.rishav.dev/skills-assets/cplusplus-original.svg[C++,100]
+image:https://profilinator.rishav.dev/skills-assets/csharp-original.svg[C#,100]
+image:https://profilinator.rishav.dev/skills-assets/java-original-wordmark.svg[Java,100]
+image:https://profilinator.rishav.dev/skills-assets/kotlinlang-icon.svg[Kotlin,100]
+image:https://profilinator.rishav.dev/skills-assets/javascript-original.svg[JavaScript,100]
+image:https://profilinator.rishav.dev/skills-assets/python-original.svg[Python,100]
+image:https://upload.wikimedia.org/wikipedia/commons/2/20/Mathematica_Logo.svg[Mathematica,100]
+image:https://www.svgrepo.com/show/373830/matlab.svg[Matlab,100]
