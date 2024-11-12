@@ -1,6 +1,6 @@
 = Introduction
 
-Hi! This is DavidWang19, a retired OIer. Now I am an undergraduate majoring Natural Sciences (actually physics) at University of Cambridge.
+Hi! This is DavidWang19, a retired OIer. Now I am an Part III student majoring Natural Sciences (Astrophysics) at University of Cambridge.
 
 = Coding Status
 
