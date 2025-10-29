@@ -17,7 +17,7 @@ MEANINGLESS_LANGUAGES = {
     'git commit message', 'git config', 'git rebase',
     'tex', 'latex', 'bibtex', 'xaml', 'gitignore', 'gitignore file', 'batchfile', 'batch', 'class',
     'git', 'pickle', 'self', 'sourcemap', 'ssh config', 'ssh_config',
-    'diff', 'prolog', 'spi', 'postscript',
+    'diff', 'prolog', 'spi', 'postscript', 'asciidoc'
 }
 
 # CMake 归入 C++
@@ -39,7 +39,7 @@ WEB_LANGUAGES = {'javascript', 'typescript', 'html', 'css', 'scss', 'sass', 'les
 SHELL_LANGUAGES = {'bash', 'shell', 'shellscript', 'shell script', 'sh', 'zsh', 'nix', 'actionscript', 'powershell', 'pwsh', 'docker', 'dockerfile'}
 
 # Shader 语言合并为 "Shader"
-SHADER_LANGUAGES = {'glsl', 'hlsl', 'shaderlab'}
+SHADER_LANGUAGES = {'glsl', 'hlsl', 'shaderlab', 'f#'}
 
 
 async def get_wakatime_all_time_stats_async() -> Dict:
@@ -266,19 +266,19 @@ def process_language_data(raw_languages: List[Dict]) -> List[Dict]:
     # 添加 Web Development 汇总
     if web_seconds > 0:
         web_key = 'web'
-        language_dict[web_key] = {'name': 'Web Development', 'total_seconds': web_seconds}
+        language_dict[web_key] = {'name': 'Web Dev Langs', 'total_seconds': web_seconds}
         print(f"  ✓ Web 开发总计: {web_seconds / 3600:.2f}h")
     
     # 添加 Shell 汇总
     if shell_seconds > 0:
         shell_key = 'shell'
-        language_dict[shell_key] = {'name': 'Shell', 'total_seconds': shell_seconds}
+        language_dict[shell_key] = {'name': 'Shell Langs', 'total_seconds': shell_seconds}
         print(f"  ✓ Shell 脚本总计: {shell_seconds / 3600:.2f}h")
     
     # 添加 Shader 汇总
     if shader_seconds > 0:
         shader_key = 'shader'
-        language_dict[shader_key] = {'name': 'Shader', 'total_seconds': shader_seconds}
+        language_dict[shader_key] = {'name': 'Shader Langs', 'total_seconds': shader_seconds}
         print(f"  ✓ Shader 语言总计: {shader_seconds / 3600:.2f}h")
     
     # 步骤 3: 将 Gradle 按真实比例分配
