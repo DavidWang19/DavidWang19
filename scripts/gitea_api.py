@@ -112,7 +112,7 @@ async def get_gitea_contributions_async(days: int = 365) -> List[Dict]:
         
     except Exception as e:
         print(f"获取 Gitea Heatmap 数据失败: {e}")
-        return []
+        raise e
 
 
 def get_gitea_contributions(days: int = 365) -> List[Dict]:
@@ -168,6 +168,7 @@ async def get_gitea_stats_async() -> Dict:
         
     except Exception as e:
         print(f"获取 Gitea 统计数据失败: {e}")
+        raise e
     
     return stats
 
