@@ -32,8 +32,8 @@ JAVA_RELATED = {'java properties', 'properties', 'mixin_json_configuration', 'mi
 # Gradle 相关语言（用于计算真实比例）
 GRADLE_TARGET_LANGUAGES = {'java', 'kotlin', 'groovy'}
 
-# Web 开发语言合并为 "Web Development"
-WEB_LANGUAGES = {'javascript', 'typescript', 'html', 'css', 'scss', 'sass', 'less', 'jsx', 'tsx', 'vue', 'vue.js', 'svelte', 'tsconfig', 'tsconfig.json'}
+# 前端开发语言合并为 "Frontend Langs"
+FRONTEND_LANGUAGES = {'javascript', 'typescript', 'html', 'css', 'scss', 'sass', 'less', 'jsx', 'tsx', 'vue', 'vue.js', 'svelte', 'tsconfig', 'tsconfig.json'}
 
 # Shell 脚本语言合并为 "Shell"
 SHELL_LANGUAGES = {'bash', 'shell', 'shellscript', 'shell script', 'sh', 'zsh', 'nix', 'actionscript', 'powershell', 'pwsh', 'docker', 'dockerfile'}
@@ -157,7 +157,7 @@ def process_language_data(raw_languages: List[Dict]) -> List[Dict]:
         gradle_distribution = {'java': 1.0}  # 全部归入 Java
     
     # 第二遍：正式处理数据
-    web_seconds = 0  # 收集 Web 开发相关语言的时长
+    frontend_seconds = 0  # 收集 Frontend 开发相关语言的时长
     jupyter_seconds = 0  # 收集 Jupyter 相关的时长
     java_related_seconds = 0  # 收集 Java 相关文件的时长
     shell_seconds = 0  # 收集 Shell 脚本相关的时长
@@ -196,11 +196,11 @@ def process_language_data(raw_languages: List[Dict]) -> List[Dict]:
             gradle_seconds += seconds
             print(f"  分配: {name} → Java/Kotlin/Groovy ({seconds / 3600:.2f}h)")
             continue
-        
-        # 合并 Web 开发语言
-        if name_lower in WEB_LANGUAGES:
-            web_seconds += seconds
-            print(f"  合并: {name} → Web Development ({seconds / 3600:.2f}h)")
+
+        # 合并 Frontend 开发语言
+        if name_lower in FRONTEND_LANGUAGES:
+            frontend_seconds += seconds
+            print(f"  合并: {name} → Frontend Development ({seconds / 3600:.2f}h)")
             continue
         
         # 合并 Shell 脚本语言
@@ -262,13 +262,13 @@ def process_language_data(raw_languages: List[Dict]) -> List[Dict]:
             language_dict[java_key] = {'name': 'Java', 'total_seconds': 0}
         language_dict[java_key]['total_seconds'] += java_related_seconds
         print(f"  ✓ Java Properties 总计归入 Java: {java_related_seconds / 3600:.2f}h")
-    
-    # 添加 Web Development 汇总
-    if web_seconds > 0:
-        web_key = 'web'
-        language_dict[web_key] = {'name': 'Web Dev Langs', 'total_seconds': web_seconds}
-        print(f"  ✓ Web 开发总计: {web_seconds / 3600:.2f}h")
-    
+
+    # 添加 Frontend 汇总
+    if frontend_seconds > 0:
+        frontend_key = 'frontend'
+        language_dict[frontend_key] = {'name': 'Frontend Langs', 'total_seconds': frontend_seconds}
+        print(f"  ✓ Frontend 开发总计: {frontend_seconds / 3600:.2f}h")
+
     # 添加 Shell 汇总
     if shell_seconds > 0:
         shell_key = 'shell'
